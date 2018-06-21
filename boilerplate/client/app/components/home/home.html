@@ -1,0 +1,14 @@
+<div class="home">
+  <text-input class="home-input"
+              on-input-submit="$ctrl.onInputSubmit(search)">
+  </text-input>
+
+  <ul class="home-list"
+      ng-if="$ctrl.booksList">
+    <li class="home-list_item"
+        ng-repeat="bookItem in $ctrl.booksList | filter:$ctrl.inputValue">
+      <book-item book="bookItem"
+                 onBookAdd="$ctrl.addBook(bookItem)"></book-item>
+    </li>
+  </ul>
+</div>
